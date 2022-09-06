@@ -1,6 +1,18 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
 
+// function loop (info){
+
+//   let markdown = []
+//   for(let i=0; i < info.length; i++) {
+//     let newHTML = `
+//     (${email})[mailto:${email}]
+//     `
+//     markdown.push(newHTML)
+//   }
+//   return markdown.join('')
+// }
+
 const generateReadMe = ({
   title,
   description,
@@ -8,12 +20,15 @@ const generateReadMe = ({
   why,
   problem,
   learned,
+  info
 }) => `
 # ${title}
 
 ## Description
 
-${description}
+${description}  
+
+${loop(info)}
 
 - The Motivation for building this application was  ${motivation}
 - The application was built to ${why}
@@ -78,6 +93,81 @@ inquirer.prompt([
     type: "number",
   },
 ]);
+// .then(
+//   async answers => {
+//     let newInfo = []
+//       for (let i =0; i<answers.install; i++){
+//          await inquirer.prompt([
+//               {
+//                   type: "input",
+//                   name: "question" ,
+//                   message: "Answer the question" +i ,
+//               },
+//               {
+//                   type: "input",
+//                   name: "email",
+//                   message: "whats your email address",
+//               }
+//           ]).then(
+//               data =>{
+
+//                   let newResponse = {
+//                       question: data.question,
+//                       email: data.email
+//                   }
+//                   newInfo.push(newResponse)
+                 
+//               }
+//           )
+//       }
+      
+//   }
+// ).then(()=> {
+//   console.log("Running: ", numberOf)
+// })
+
+// function init () {
+//   inquirer.prompt ([
+
+//   {
+//       type: "number",
+//       name: "name",
+//       message: "enter a number",
+//   }
+// ]).then(
+//   async answers => {
+//       for (let i =0; i<answers.name; i++){
+//          await inquirer.prompt([
+//               {
+//                   type: "input",
+//                   name: "question" + i,
+//                   message: "Answer the question",
+//               },
+//               {
+//                   type: "input",
+//                   name: "email",
+//                   message: "whats your email address",
+//               }
+//           ]).then(
+//               data =>{
+
+//                   let newResponse = {
+//                       question: data.question,
+//                       email: data.email
+//                   }
+//                   numberOf.contributors = newResponse
+//               }
+//           )
+//       }
+      
+//   }
+// ).then(()=> {
+//   console.log("Running: ", numberOf)
+// })
+// }
+
+// init();
+
 // function contributors () {
 //   var install = `${install}`
 //   for(let i=0; i<install.length; i++) {
