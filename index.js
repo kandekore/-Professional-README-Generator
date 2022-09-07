@@ -14,15 +14,15 @@ const inquirer = require("inquirer");
 // }
 
 const generateReadMe = ({
-  title,
+  title1,
   description,
   motivation,
   why,
   problem,
   learned,
-  info
+  info,
 }) => `
-# ${title}
+# ${title}  ${title1}
 
 ## Description
 
@@ -116,11 +116,11 @@ inquirer.prompt([
 //                       email: data.email
 //                   }
 //                   newInfo.push(newResponse)
-                 
+
 //               }
 //           )
 //       }
-      
+
 //   }
 // ).then(()=> {
 //   console.log("Running: ", numberOf)
@@ -159,7 +159,7 @@ inquirer.prompt([
 //               }
 //           )
 //       }
-      
+
 //   }
 // ).then(()=> {
 //   console.log("Running: ", numberOf)
