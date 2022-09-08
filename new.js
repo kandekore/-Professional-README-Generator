@@ -13,9 +13,10 @@ const generateReadMe = ({
   install,
   answers,
   step1,
-  obj,
+  contributors,
 }) => `
-# ${title} ${title1}
+# ${title}  
+${title1}
 ## Description
 ${license}
 ${install}
@@ -30,6 +31,33 @@ ${description}
 - The application was built to ${why}
 - It solves the problem of ${problem}
 - Through the process of building this application I learned ${learned}
+`;
+
+const appendReadMe = ({
+  title,
+  title1,
+  description,
+  motivation,
+  why,
+  problem,
+  learned,
+  license,
+  install,
+  answers,
+  step1,
+  contributors,
+}) => `
+
+${title1}
+## Description
+
+`;
+const appendReadMe2 = ({ step1, step2 }) => `
+
+${step1}
+${step2}
+## Step
+
 `;
 
 inquirer
@@ -91,9 +119,9 @@ inquirer
     },
   ])
   .then(async (answers) => {
-    var arr = [answers];
+    var arr = [];
     for (let i = 0; i < answers.install; i++) {
-      var obj = {};
+      var obj = "";
       var response = await inquirer.prompt([
         {
           type: "input",
@@ -101,7 +129,7 @@ inquirer
           message: "Answer the question" + (i + 1),
         },
       ]);
-      obj = response;
+      var obj = response;
       arr.push(obj);
 
       console.log(response);
@@ -123,9 +151,9 @@ inquirer
         },
       ])
       .then(async (answers2) => {
-        var arr2 = [answers2];
+        var arr2 = [];
         for (let x = 0; x < answers2.contributors; x++) {
-          var obj2 = {};
+          var obj2 = "";
           var responseTwo = await inquirer.prompt([
             {
               type: "input",
@@ -138,8 +166,10 @@ inquirer
               message: "Answer the question" + (x + 1),
             },
           ]);
-          obj2 = responseTwo;
+          var obj2 = responseTwo;
+
           arr2.push(obj2);
+          console.log(responseTwo);
         }
         console.log(response);
         var results = answers;
@@ -160,8 +190,19 @@ inquirer
         console.log(responseTwo);
         var results = answers;
         const text = generateReadMe(results);
+        const text2 = appendReadMe(answers2);
+        const text3 = appendReadMe2(...arr);
+
+        // console.log((results, answers2).replace(/} { /g, ""));
         // const moreText = generateReadMe(answers2);
         fs.writeFile("README.md", text, (err) => {
+          err ? console.log(err) : console.log("success");
+        });
+        fs.appendFile("README.md", text2, (err) => {
+          err ? console.log(err) : console.log("success");
+        });
+
+        fs.appendFile("README.md", text3, (err) => {
           err ? console.log(err) : console.log("success");
         });
       });
