@@ -46,7 +46,7 @@ ${description}
 
 ## Usage
 
-${usagelinkstatment} [${usagelink}](${usagelink})
+${usagelinkstatment} [this link.](${usagelink})
 
 ${usage}
 
