@@ -1,189 +1,206 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
 
-// function loop (info){
-
-//   let markdown = []
-//   for(let i=0; i < info.length; i++) {
-//     let newHTML = `
-//     (${email})[mailto:${email}]
-//     `
-//     markdown.push(newHTML)
-//   }
-//   return markdown.join('')
-// }
-
 const generateReadMe = ({
+  title,
   title1,
   description,
   motivation,
   why,
   problem,
   learned,
-  info,
+  license,
+  install,
+  answers,
+  step1,
+  contributors,
 }) => `
-# ${title}  ${title1}
-
+##README CREATE
+# ${title}  
+${title1}
 ## Description
+${license}
+${install}
+${step1}
+${answers}
 
-${description}  
 
-${loop(info)}
 
+
+${description}
 - The Motivation for building this application was  ${motivation}
 - The application was built to ${why}
 - It solves the problem of ${problem}
 - Through the process of building this application I learned ${learned}
+
+
+
+##Install Steps
 `;
 
-inquirer.prompt([
-  {
-    name: "title",
-    message: "What is the project title?",
-    type: "input",
-  },
-  {
-    name: "description",
-    message: "Give the project a description",
-    type: "input",
-  },
-  {
-    name: "motivation",
-    message: "The motivation for building this app was...",
-    type: "input",
-  },
-  {
-    name: "why",
-    message: "The application was built to...",
-    type: "input",
-  },
-  {
-    name: "problem",
-    message: "The application solves the problem of...",
-    type: "input",
-  },
-  {
-    name: "installation",
-    message: "How is this application installed?",
-    type: "input",
-  },
+const appendReadMe = ({ step }) => `
 
-  {
-    name: "usage",
-    message: "How is the application used?",
-    type: "input",
-  },
+${step}`;
+const appendReadMe4 = ({ license }) => `
 
-  {
-    name: "screenshot",
-    message: "Provide the URL to a screenshot",
-    type: "input",
-  },
-  {
-    name: "license",
+#APPEND 4
+${license}
 
-    message:
-      "Choose a license for the application. (navigate using up & down arrow)",
-    type: "list",
-    choices: ["Apache License 2.0", "GNU GPLv3", "MIT", "ISC License"],
-  },
-  {
-    name: "install",
-    message: "How many steps required to install your application?",
-    type: "number",
-  },
-]);
-// .then(
-//   async answers => {
-//     let newInfo = []
-//       for (let i =0; i<answers.install; i++){
-//          await inquirer.prompt([
-//               {
-//                   type: "input",
-//                   name: "question" ,
-//                   message: "Answer the question" +i ,
-//               },
-//               {
-//                   type: "input",
-//                   name: "email",
-//                   message: "whats your email address",
-//               }
-//           ]).then(
-//               data =>{
+## Step
 
-//                   let newResponse = {
-//                       question: data.question,
-//                       email: data.email
-//                   }
-//                   newInfo.push(newResponse)
+`;
 
-//               }
-//           )
-//       }
+const appendReadMe3 = ({ contname, contgithub }) => `
 
-//   }
-// ).then(()=> {
-//   console.log("Running: ", numberOf)
-// })
+#APPEND 3
+[${contgithub}] ${contname}
 
-// function init () {
-//   inquirer.prompt ([
+## Step
 
-//   {
-//       type: "number",
-//       name: "name",
-//       message: "enter a number",
-//   }
-// ]).then(
-//   async answers => {
-//       for (let i =0; i<answers.name; i++){
-//          await inquirer.prompt([
-//               {
-//                   type: "input",
-//                   name: "question" + i,
-//                   message: "Answer the question",
-//               },
-//               {
-//                   type: "input",
-//                   name: "email",
-//                   message: "whats your email address",
-//               }
-//           ]).then(
-//               data =>{
+`;
+inquirer
+  .prompt([
+    {
+      name: "title",
+      message: "What is the project title?",
+      type: "input",
+    },
+    {
+      name: "description",
+      message: "Give the project a description",
+      type: "input",
+    },
+    {
+      name: "motivation",
+      message: "The motivation for building this app was...",
+      type: "input",
+    },
+    {
+      name: "why",
+      message: "The application was built to...",
+      type: "input",
+    },
+    {
+      name: "problem",
+      message: "The application solves the problem of...",
+      type: "input",
+    },
+    {
+      name: "installation",
+      message: "How is this application installed?",
+      type: "input",
+    },
 
-//                   let newResponse = {
-//                       question: data.question,
-//                       email: data.email
-//                   }
-//                   numberOf.contributors = newResponse
-//               }
-//           )
-//       }
+    {
+      name: "usage",
+      message: "How is the application used?",
+      type: "input",
+    },
 
-//   }
-// ).then(()=> {
-//   console.log("Running: ", numberOf)
-// })
-// }
+    {
+      name: "screenshot",
+      message: "Provide the URL to a screenshot",
+      type: "input",
+    },
+    {
+      name: "license",
 
-// init();
+      message:
+        "Choose a license for the application. (navigate using up & down arrow)",
+      type: "list",
+      choices: [
+        { name: "Apache License 2.0", value: "http://image.com" },
+        { name: "GNU GPLv3", value: "http://image1.com" },
+      ],
+    },
+    // {
+    //   name: "install",
+    //   message: "How many steps required to install your application?",
+    //   type: "number",
+    // },
+  ])
+  .then(async (answers) => {
+    const text = generateReadMe(answers);
+    fs.writeFile("README.md", text, (err) => {
+      err ? console.log(err) : console.log("");
+    });
+    console.log(answers);
+    inquirer
+      .prompt([
+        {
+          name: "install",
+          message: "How many steps required to install your application?",
+          type: "number",
+        },
+      ])
+      .then(async (installSteps) => {
+        for (let i = 0; i < installSteps.install; i++) {
+          var response = await inquirer.prompt([
+            {
+              type: "input",
+              name: "step",
+              message: "What is step " + (i + 1) + "?",
+            },
+          ]);
+          console.log(response);
+          const textInstallSteps = appendReadMe(response);
 
-// function contributors () {
-//   var install = `${install}`
-//   for(let i=0; i<install.length; i++) {
-//     inquirer
-// .prompt([
+          fs.appendFile("README.md", textInstallSteps, (err) => {
+            err ? console.log(err) : console.log("success");
+          });
+        }
+      })
 
-//     name: "install"[i],
-//     message: "How many steps required to install your application?",
-//     type: "number",
+      .then(async () => {
+        // var licResponse = await inquirer.prompt([
+        //   {
+        //     name: "license",
 
-//   },
-// ]);
+        //     message:
+        //       "Choose a license for the application. (navigate using up & down arrow)",
+        //     type: "list",
+        //     choices: [
+        //       { name: "Apache License 2.0", value: "http://image.com" },
+        //       { name: "GNU GPLv3", value: "http://image1.com" },
+        //     ],
+        //   },
+        // ]);
+        // const licImg = appendReadMe4(licResponse);
+        // fs.appendFile("README.md", licImg, (err) => {
+        //   err ? console.log(err) : console.log("success");
+        // });
 
-contributors().then((response) => {
-  const text = generateReadMe(response);
-  fs.writeFile("README.md", text, (err) => {
-    err ? console.log(err) : console.log("success");
+        await inquirer
+          .prompt([
+            {
+              name: "contributors",
+              message: "How many contributors?",
+              type: "number",
+            },
+          ])
+          .then(async (contr) => {
+            for (let x = 0; x < contr.contributors; x++) {
+              var contributor = await inquirer.prompt([
+                {
+                  type: "input",
+                  name: "contname",
+                  message: "contributor " + (x + 1) + " name",
+                },
+                {
+                  type: "input",
+                  name: "contgithub",
+                  message: "Answer the question" + (x + 1),
+                },
+              ]);
+              console.log(contributor);
+              const text2 = appendReadMe3(contributor);
+              fs.appendFile("README.md", text2, (err) => {
+                err ? console.log(err) : console.log("success");
+              });
+            }
+          });
+
+        // console.log(answers);
+        // console.log(resonse);
+      });
   });
-});

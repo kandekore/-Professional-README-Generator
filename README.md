@@ -1,47 +1,40 @@
 
 ##README CREATE
-# undefined  
+# kmmk  
 undefined
 ## Description
+http://image.com
 undefined
-2
 undefined
 undefined
 
 
 
 
-undefined
-- The Motivation for building this application was  undefined
-- The application was built to undefined
-- It solves the problem of undefined
+kmk
+- The Motivation for building this application was  kmkk
+- The application was built to mkmk
+- It solves the problem of mkkmk
 - Through the process of building this application I learned undefined
 
-##APPEND1
-
-undefined
-## Description
 
 
+##Install Steps
 
-#APPEND2
 
-undefined
-undefined
-undefined
+1
+
+2 step
+
+#APPEND 3
+[jnjn] fghgf
+
 ## Step
 
 
 
 #APPEND 3
-undefined
-
-## Step
-
-
-
-#APPEND 4
-http://image.com
+[njnj] njnj
 
 ## Step
 

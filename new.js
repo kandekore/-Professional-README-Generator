@@ -82,7 +82,6 @@ ${license}
 
 `;
 
-
 inquirer
   .prompt([
     // {
@@ -175,62 +174,64 @@ inquirer
           var responseTwo = await inquirer.prompt([
             {
               type: "input",
-              name: "contname" ,
+              name: "contname",
               message: "contributor " + (x + 1) + " name",
             },
             {
               type: "input",
               name: "contgithub",
               message: "Answer the question" + (x + 1),
-            },        
+            },
           ]);
 
-          console.log(responseTwo)       
-        console.log(responseTwo.contname)
-        console.log(responseTwo.contgithub)
+          console.log(responseTwo);
+          console.log(responseTwo.contname);
+          console.log(responseTwo.contgithub);
 
-        console.log("contname"+[x]+":"+responseTwo.contname)
-          
-          var obj2 = (responseTwo)
+          console.log("contname" + [x] + ":" + responseTwo.contname);
+
+          var obj2 = responseTwo;
 
           arr2.push(obj2);
-          console.log(responseTwo.name)
-          console.log(responseTwo.value)
+          console.log(responseTwo.name);
+          console.log(responseTwo.value);
           var results2 = answers2;
         }
 
-       
         // .then(async (answers2) => {
-          var lic = [];
-          var licResponse = await inquirer.prompt ([
-            {
-              name: "license",
-        
-              message:
-                "Choose a license for the application. (navigate using up & down arrow)",
-              type: "list",
-              choices: [{name : "Apache License 2.0", value: "http://image.com"},  {name : "GNU GPLv3",  value: "http://image1.com"}],
-            },
-          ])
-          //  if (licResponse == ({ license: 'Apache License 2.0' })){
-          //  var licImg = "http://image.com"
-          //  }
-          //  else if (licResponse == ({ license: 'GNU GPLv3' })){
-          //  var licImg = "http://image1.com"
-          //  }
+        var lic = [];
+        var licResponse = await inquirer.prompt([
+          {
+            name: "license",
 
-           console.log(licResponse)
-          
-          //  lic.push(licImg)
-      //      console.log(licImg)
-           
-      // // })
-       
-      // console.log(licImg)
-           
-      console.log(lic)
+            message:
+              "Choose a license for the application. (navigate using up & down arrow)",
+            type: "list",
+            choices: [
+              { name: "Apache License 2.0", value: "http://image.com" },
+              { name: "GNU GPLv3", value: "http://image1.com" },
+            ],
+          },
+        ]);
+        //  if (licResponse == ({ license: 'Apache License 2.0' })){
+        //  var licImg = "http://image.com"
+        //  }
+        //  else if (licResponse == ({ license: 'GNU GPLv3' })){
+        //  var licImg = "http://image1.com"
+        //  }
+
+        console.log(licResponse);
+
+        //  lic.push(licImg)
+        //      console.log(licImg)
+
+        // // })
+
+        // console.log(licImg)
+
+        console.log(lic);
         console.log("results2");
-        console.log(results2);
+        console.log(answers);
         console.log(response);
         var results = answers;
         // response.push(answers);
@@ -253,7 +254,7 @@ inquirer
         const text2 = appendReadMe(answers2);
         const text3 = appendReadMe2(arr);
         const text4 = appendReadMe3(arr2);
-        const licImg = appendReadMe4(licResponse)
+        const licImg = appendReadMe4(licResponse);
 
         // console.log((results, answers2).replace(/} { /g, ""));
         // const moreText = generateReadMe(answers2);
