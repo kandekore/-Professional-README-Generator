@@ -3,8 +3,6 @@ const inquirer = require("inquirer");
 
 const generateReadMe = ({
   title,
-  username,
-  email,
   description,
   motivation,
   why,
@@ -15,8 +13,6 @@ const generateReadMe = ({
   usagelink,
   usagelinkstatment,
   usage,
-  testing,
-  contributors,
 }) => `
 
 ![badmath](${license})
@@ -73,8 +69,10 @@ const appendReadMe3 = ({ contname, contgithub }) => `
 
 const appendReadMeQuest = ({ username, email }) => `
 
+## Questions
 
 [${username}](https://github.com/${username})
+
 [${email}](mailto:${email})
 
 
@@ -157,7 +155,7 @@ inquirer
     fs.writeFile("README.md", text, (err) => {
       err ? console.log(err) : console.log("");
     });
-    console.log(answers);
+    // console.log(answers);
     inquirer
       .prompt([
         {
@@ -179,7 +177,7 @@ inquirer
           const textInstallSteps = appendReadMe(response);
 
           fs.appendFile("README.md", textInstallSteps, (err) => {
-            err ? console.log(err) : console.log("success");
+            err ? console.log(err) : console.log("");
           });
         }
       })
@@ -194,7 +192,7 @@ inquirer
         const testsection = appendReadMeTest(testing);
 
         fs.appendFile("README.md", testsection, (err) => {
-          err ? console.log(err) : console.log("success");
+          err ? console.log(err) : console.log("");
         });
       })
 
@@ -224,7 +222,7 @@ inquirer
               console.log(contributor);
               const text2 = appendReadMe3(contributor);
               fs.appendFile("README.md", text2, (err) => {
-                err ? console.log(err) : console.log("success");
+                err ? console.log(err) : console.log("");
               });
             }
           });
@@ -247,7 +245,9 @@ inquirer
         const quest = appendReadMeQuest(questions);
 
         fs.appendFile("README.md", quest, (err) => {
-          err ? console.log(err) : console.log("success");
+          err
+            ? console.log(err)
+            : console.log("Your README.md file has been created");
         });
       });
   });
