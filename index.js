@@ -9,7 +9,6 @@ const generateReadMe = ({
   problem,
   learned,
   license,
-  install,
   usagelink,
   usagelinkstatment,
   usage,
@@ -25,8 +24,7 @@ const generateReadMe = ({
 - [Usage](#usage)
 - [Installation](#installation)
 - [Testing](#testing)
-- [Contributing](#Contributing)
-- [Tests](#tests)
+- [Contributors](#Contributors)
 - [Questions](#Questions)
 
 
@@ -44,8 +42,12 @@ ${usagelinkstatment} [this link.](${usagelink})
 
 ${usage}
 
+## License
 
-## Install Steps
+This application is covered under the ![badmath](${license}) licence
+
+
+## Installation
 `;
 
 const appendReadMe = ({ step }) => `
@@ -70,6 +72,8 @@ const appendReadMe3 = ({ contname, contgithub }) => `
 const appendReadMeQuest = ({ username, email }) => `
 
 ## Questions
+
+Please contact me if you have any questions
 
 [${username}](https://github.com/${username})
 
@@ -106,8 +110,8 @@ inquirer
       type: "input",
     },
     {
-      name: "install",
-      message: "How is this application installed?",
+      name: "learned",
+      message: "Through the process of building this application I learned...",
       type: "input",
     },
     {
@@ -173,7 +177,7 @@ inquirer
               message: "What is step " + (i + 1) + "?",
             },
           ]);
-          console.log(response);
+          // console.log(response);
           const textInstallSteps = appendReadMe(response);
 
           fs.appendFile("README.md", textInstallSteps, (err) => {
@@ -216,10 +220,10 @@ inquirer
                 {
                   type: "input",
                   name: "contgithub",
-                  message: "Answer the question" + (x + 1),
+                  message: "What is thier GitHub ID",
                 },
               ]);
-              console.log(contributor);
+              // console.log(contributor);
               const text2 = appendReadMe3(contributor);
               fs.appendFile("README.md", text2, (err) => {
                 err ? console.log(err) : console.log("");

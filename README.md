@@ -1,8 +1,8 @@
 
 
-![badmath](https://img.shields.io/badge/license-MIT-green)
+![badmath](https://img.shields.io/badge/license-MIT%2FApache--2.0-blue)
 
-# ReadMe File Generator  
+# Professional ReadMe File Generator  
 
 ## Table of Contents 
 
@@ -10,27 +10,30 @@
 - [Usage](#usage)
 - [Installation](#installation)
 - [Testing](#testing)
-- [Contributing](#Contributing)
-- [Tests](#tests)
+- [Contributors](#Contributors)
 - [Questions](#Questions)
 
 
 ## Description
 
 This application creates a README.md file based on inputs to command line
-- The Motivation for building this application was  to save developers time
+- The Motivation for building this application was  was to save developers time
 - The application was built to make the process of adding a README.md file easier
 - It solves the problem of having to create a file from scratch
-- Through the process of building this application I learned undefined
+- Through the process of building this application I learned how to create and append files, and use for loops to ask questions that have multiple answers
 
 ## Usage
 
-For a video of how to use the application please follow [this link.](https:///)
+For a video of how to use the application please follow [this link.](http)
 
 The application is used soley in command line using inquirer and fs
 
+## License
 
-## Install Steps
+This application is covered under the ![badmath](https://img.shields.io/badge/license-MIT%2FApache--2.0-blue) licence
+
+
+## Installation
 
 
 Clone repository by typing 'git clone https://github.com/kandekore/-Professional-README-Generator.git' into terminal
@@ -55,6 +58,8 @@ The application is tested by running the index.js file in terminal
 
 
 ## Questions
+
+Please contact me if you have any questions
 
 [kandekore](https://github.com/kandekore)
 
