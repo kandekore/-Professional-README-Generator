@@ -19,7 +19,7 @@ const generateReadMe = ({
   contributors,
 }) => `
 
-![badmath](${license.value})
+![badmath](${license})
 ##README CREATE
 # ${title}  
 
