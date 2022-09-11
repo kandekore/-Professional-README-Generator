@@ -1,6 +1,6 @@
 
 ##README CREATE
-# kmmk  
+# sss  
 undefined
 ## Description
 http://image.com
@@ -11,10 +11,10 @@ undefined
 
 
 
-kmk
-- The Motivation for building this application was  kmkk
-- The application was built to mkmk
-- It solves the problem of mkkmk
+
+- The Motivation for building this application was  
+- The application was built to 
+- It solves the problem of 
 - Through the process of building this application I learned undefined
 
 
@@ -22,19 +22,28 @@ kmk
 ##Install Steps
 
 
-1
+step 1
 
-2 step
+step 2
+
+step 3
 
 #APPEND 3
-[jnjn] fghgf
+[git] bob 
 
 ## Step
 
 
 
 #APPEND 3
-[njnj] njnj
+[git] sally
+
+## Step
+
+
+
+#APPEND 3
+[sss] jessie
 
 ## Step
 

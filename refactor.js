@@ -24,19 +24,8 @@ ${install}
 ${step1}
 ${answers}
 
-## Table of Contents (Optional)
 
-If your README is long, add a table of contents to make it easy for users to find what they need.
 
-- [Description](#Description)
-- [Installation](#installation)
-- [Usage](#usage)
-- [License](#license)
-- [Contributing](#Contributing)
-- [Tests](#tests)
-- [Questions](#Questions)
-
-## Description
 
 ${description}
 - The Motivation for building this application was  ${motivation}
@@ -77,16 +66,6 @@ inquirer
       type: "input",
     },
     {
-      name: "username",
-      message: "What is your GitHub username?",
-      type: "input",
-    },
-    {
-      name: "email",
-      message: "What is your email address?",
-      type: "input",
-    },
-    {
       name: "description",
       message: "Give the project a description",
       type: "input",
@@ -111,31 +90,21 @@ inquirer
       message: "How is this application installed?",
       type: "input",
     },
-    {
-      name: "usagelink",
-      message: "Provide a link to the application or an application video",
-      type: "input",
-    },
-    {
-      name: "usagelinkstatment",
-      message: "Describe the link",
-      choices: [
-        "For a video of how to use the application please follow",
-        "To see the deployed application please follow",
-      ],
-    },
+
     {
       name: "usage",
       message: "How is the application used?",
       type: "input",
     },
+
     {
-      name: "testing",
-      message: "how is this application tested",
+      name: "screenshot",
+      message: "Provide the URL to a screenshot",
       type: "input",
     },
     {
       name: "license",
+
       message:
         "Choose a license for the application. (navigate using up & down arrow)",
       type: "list",
@@ -147,6 +116,7 @@ inquirer
   ])
   .then(async (answers) => {
     const text = generateReadMe(answers);
+
     fs.writeFile("README.md", text, (err) => {
       err ? console.log(err) : console.log("");
     });
