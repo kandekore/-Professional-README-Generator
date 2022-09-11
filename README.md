@@ -1,10 +1,10 @@
-![badmath](https://img.shields.io/badge/license-GPL-blue)
 
-# title
 
-## Table of Contents (Optional)
+![badmath](https://img.shields.io/badge/license-MIT%2FApache--2.0-blue)
 
-If your README is long, add a table of contents to make it easy for users to find what they need.
+# jkhj  
+
+## Table of Contents 
 
 - [Description](#Description)
 - [Usage](#usage)
@@ -14,19 +14,53 @@ If your README is long, add a table of contents to make it easy for users to fin
 - [Tests](#tests)
 - [Questions](#Questions)
 
+
 ## Description
 
-ddd
 
-- The Motivation for building this application was
-- The application was built to
-- It solves the problem of
+- The Motivation for building this application was  
+- The application was built to 
+- It solves the problem of 
 - Through the process of building this application I learned undefined
 
 ## Usage
 
-To see the deployed application please follow [this link.](http://kandekore.net)
+For a video of how to use the application please follow [this link.]()
 
-kljkj
+rggs
 
-##Install Steps
+
+## Install Steps
+
+
+1
+
+2
+
+## Testing
+
+test
+
+## Contributors
+
+
+
+[https://github.com/afasaf] (safsas)
+
+
+
+
+
+
+[https://github.com/assa] (ssa)
+
+
+
+
+
+
+[https://github.com/kandekore] (kandekore)
+[mailto:darren@kandekore.net](darren@kandekore.net)
+
+
+

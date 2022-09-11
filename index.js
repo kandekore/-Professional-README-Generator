@@ -23,9 +23,7 @@ const generateReadMe = ({
 
 # ${title}  
 
-## Table of Contents (Optional)
-
-If your README is long, add a table of contents to make it easy for users to find what they need.
+## Table of Contents 
 
 - [Description](#Description)
 - [Usage](#usage)
@@ -51,27 +49,35 @@ ${usagelinkstatment} [this link.](${usagelink})
 ${usage}
 
 
-##Install Steps
+## Install Steps
 `;
 
 const appendReadMe = ({ step }) => `
 
 ${step}`;
-const appendReadMe4 = ({ license }) => `
 
-#APPEND 4
-${license}
+const appendReadMeTest = ({ test }) => `
 
-## Step
+## Testing
 
+${test}
+
+## Contributors
 `;
 
 const appendReadMe3 = ({ contname, contgithub }) => `
 
-#APPEND 3
-[${contgithub}] ${contname}
+[https://github.com/${contgithub}] (${contname})
 
-## Step
+`;
+
+const appendReadMeQuest = ({ username, email }) => `
+
+
+[https://github.com/${username}] (${username})
+[mailto:${email}](${email})
+
+
 
 `;
 inquirer
@@ -79,16 +85,6 @@ inquirer
     {
       name: "title",
       message: "What is the project title?",
-      type: "input",
-    },
-    {
-      name: "username",
-      message: "What is your GitHub username?",
-      type: "input",
-    },
-    {
-      name: "email",
-      message: "What is your email address?",
       type: "input",
     },
     {
@@ -133,11 +129,6 @@ inquirer
     {
       name: "usage",
       message: "How is the application used?",
-      type: "input",
-    },
-    {
-      name: "testing",
-      message: "how is this application tested",
       type: "input",
     },
     {
@@ -192,6 +183,20 @@ inquirer
           });
         }
       })
+      .then(async () => {
+        var testing = await inquirer.prompt([
+          {
+            name: "test",
+            message: "how is this application tested",
+            type: "input",
+          },
+        ]);
+        const testsection = appendReadMeTest(testing);
+
+        fs.appendFile("README.md", testsection, (err) => {
+          err ? console.log(err) : console.log("success");
+        });
+      })
 
       .then(async () => {
         await inquirer
@@ -223,5 +228,26 @@ inquirer
               });
             }
           });
+
+        // console.log(answers);
+      })
+      .then(async () => {
+        var questions = await inquirer.prompt([
+          {
+            name: "username",
+            message: "What is your GitHub username?",
+            type: "input",
+          },
+          {
+            name: "email",
+            message: "What is your email address?",
+            type: "input",
+          },
+        ]);
+        const quest = appendReadMeQuest(questions);
+
+        fs.appendFile("README.md", quest, (err) => {
+          err ? console.log(err) : console.log("success");
+        });
       });
   });
