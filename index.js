@@ -20,25 +20,21 @@ const generateReadMe = ({
 }) => `
 
 ![badmath](${license})
-##README CREATE
+
 # ${title}  
-
-## Description
-${license}
-${install}
-
 
 ## Table of Contents (Optional)
 
 If your README is long, add a table of contents to make it easy for users to find what they need.
 
 - [Description](#Description)
-- [Installation](#installation)
 - [Usage](#usage)
-- [License](#license)
+- [Installation](#installation)
+- [Testing](#testing)
 - [Contributing](#Contributing)
 - [Tests](#tests)
 - [Questions](#Questions)
+
 
 ## Description
 
@@ -48,6 +44,11 @@ ${description}
 - It solves the problem of ${problem}
 - Through the process of building this application I learned ${learned}
 
+## Usage
+
+${usagelinkstatment} [${usagelink}](${usagelink})
+
+${usage}
 
 
 ##Install Steps
@@ -123,6 +124,7 @@ inquirer
     {
       name: "usagelinkstatment",
       message: "Describe the link",
+      type: "list",
       choices: [
         "For a video of how to use the application please follow",
         "To see the deployed application please follow",
