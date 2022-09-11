@@ -3,7 +3,8 @@ const inquirer = require("inquirer");
 
 const generateReadMe = ({
   title,
-  title1,
+  username,
+  email,
   description,
   motivation,
   why,
@@ -11,18 +12,21 @@ const generateReadMe = ({
   learned,
   license,
   install,
-  answers,
-  step1,
+  usagelink,
+  usagelinkstatment,
+  usage,
+  testing,
   contributors,
 }) => `
+
+![badmath](${license.value})
 ##README CREATE
 # ${title}  
-${title1}
+
 ## Description
 ${license}
 ${install}
-${step1}
-${answers}
+
 
 ## Table of Contents (Optional)
 
@@ -107,7 +111,7 @@ inquirer
       type: "input",
     },
     {
-      name: "installation",
+      name: "install",
       message: "How is this application installed?",
       type: "input",
     },
@@ -140,8 +144,18 @@ inquirer
         "Choose a license for the application. (navigate using up & down arrow)",
       type: "list",
       choices: [
-        { name: "Apache License 2.0", value: "http://image.com" },
-        { name: "GNU GPLv3", value: "http://image1.com" },
+        {
+          name: "Apache License 2.0",
+          value: "https://img.shields.io/badge/license-MIT%2FApache--2.0-blue",
+        },
+        {
+          name: "GNU GPL",
+          value: "https://img.shields.io/badge/license-GPL-blue",
+        },
+        {
+          name: "MIT",
+          value: "https://img.shields.io/badge/license-MIT-green",
+        },
       ],
     },
   ])
