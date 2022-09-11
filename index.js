@@ -67,15 +67,15 @@ ${test}
 
 const appendReadMe3 = ({ contname, contgithub }) => `
 
-[https://github.com/${contgithub}] (${contname})
+[${contname}](https://github.com/${contgithub})
 
 `;
 
 const appendReadMeQuest = ({ username, email }) => `
 
 
-[https://github.com/${username}] (${username})
-[mailto:${email}](${email})
+[${username}](https://github.com/${username})
+[${email}](mailto:${email})
 
 
 

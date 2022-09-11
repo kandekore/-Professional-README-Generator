@@ -2,7 +2,7 @@
 
 ![badmath](https://img.shields.io/badge/license-MIT%2FApache--2.0-blue)
 
-# jkhj  
+# title1  
 
 ## Table of Contents 
 
@@ -17,50 +17,44 @@
 
 ## Description
 
-
-- The Motivation for building this application was  
-- The application was built to 
-- It solves the problem of 
+xdvcx
+- The Motivation for building this application was  vxc
+- The application was built to xx
+- It solves the problem of vxxvc
 - Through the process of building this application I learned undefined
 
 ## Usage
 
-For a video of how to use the application please follow [this link.]()
+For a video of how to use the application please follow [this link.](cxvc)
 
-rggs
+xxvcx
 
 
 ## Install Steps
 
 
-1
+step 1
 
-2
+step 2
 
 ## Testing
 
-test
+tested
 
 ## Contributors
 
 
-
-[https://github.com/afasaf] (safsas)
-
+[kandekore](https://github.com/kandekore)
 
 
 
-
-
-[https://github.com/assa] (ssa)
+[dsddd](https://github.com/sdvdv)
 
 
 
 
-
-
-[https://github.com/kandekore] (kandekore)
-[mailto:darren@kandekore.net](darren@kandekore.net)
+[kandekore](https://github.com/kandekore)
+[darren@kandekore.net](mailto:darren@kandekore.net)
 
 
 
