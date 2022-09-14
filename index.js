@@ -45,7 +45,7 @@ ${usage}
 
 ## License
 
-This application is covered under the ![badmath](${licenceName}) licence
+This application is covered under the ${licenceName} licence
 
 
 ## Installation
