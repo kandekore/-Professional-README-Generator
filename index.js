@@ -1,6 +1,7 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
 
+
 const generateReadMe = ({
   title,
   description,
@@ -44,7 +45,7 @@ ${usage}
 
 ## License
 
-This application is covered under the ![badmath](${license}) licence
+This application is covered under the ![badmath](${licenceName}) licence
 
 
 ## Installation
@@ -82,6 +83,21 @@ Please contact me if you have any questions
 
 
 `;
+const choicesArray = [
+  {
+    name: "Apache License 2.0",
+    value: "https://img.shields.io/badge/license-MIT%2FApache--2.0-blue",
+  },
+  {
+    name: "GNU GPL",
+    value: "https://img.shields.io/badge/license-GPL-blue",
+  },
+  {
+    name: "MIT",
+    value: "https://img.shields.io/badge/license-MIT-green",
+  },
+];
+``
 inquirer
   .prompt([
     {
@@ -138,27 +154,35 @@ inquirer
       message:
         "Choose a license for the application. (navigate using up & down arrow)",
       type: "list",
-      choices: [
-        {
-          name: "Apache License 2.0",
-          value: "https://img.shields.io/badge/license-MIT%2FApache--2.0-blue",
-        },
-        {
-          name: "GNU GPL",
-          value: "https://img.shields.io/badge/license-GPL-blue",
-        },
-        {
-          name: "MIT",
-          value: "https://img.shields.io/badge/license-MIT-green",
-        },
-      ],
+      choices: choicesArray,
+      // choices: [
+      //   {
+      //     name: "Apache License 2.0",
+      //     value: "https://img.shields.io/badge/license-MIT%2FApache--2.0-blue",
+      //   },
+      //   {
+      //     name: "GNU GPL",
+      //     value: "https://img.shields.io/badge/license-GPL-blue",
+      //   },
+      //   {
+      //     name: "MIT",
+      //     value: "https://img.shields.io/badge/license-MIT-green",
+      //   },
+      // ],
     },
   ])
   .then(async (answers) => {
-    const text = generateReadMe(answers);
-    fs.writeFile("README.md", text, (err) => {
-      err ? console.log(err) : console.log("");
-    });
+    for (let i in choicesArray) {
+      if (answers.license === choicesArray[i].value) {
+        console.log(choicesArray[i].name);
+        licenceName = choicesArray[i].name;
+      }
+      const text = generateReadMe(answers);
+      fs.writeFile("README.md", text, (err) => {
+        err ? console.log(err) : console.log("");
+      });
+      
+    }
     // console.log(answers);
     inquirer
       .prompt([
