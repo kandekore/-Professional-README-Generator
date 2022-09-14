@@ -174,15 +174,15 @@ inquirer
   .then(async (answers) => {
     for (let i in choicesArray) {
       if (answers.license === choicesArray[i].value) {
-        console.log(choicesArray[i].name);
+        // console.log(choicesArray[i].name);
         licenceName = choicesArray[i].name;
       }
+    }
       const text = generateReadMe(answers);
       fs.writeFile("README.md", text, (err) => {
         err ? console.log(err) : console.log("");
       });
       
-    }
     // console.log(answers);
     inquirer
       .prompt([
