@@ -17,9 +17,9 @@
 ## Description
 
 This application creates a README.md file based on inputs to command line
-- The Motivation for building this application was  to save developers time
-- The application was built to to save developers time
-- It solves the problem of  having to create a file from scratch
+- The Motivation for building this application was    to save developers time
+- The application was built to streamline the GitHub experience
+- It solves the problem of having to create a file from scratch
 - Through the process of building this application I learned how to create and append files, and use for loops to ask questions that have multiple answers
 
 ## Usage
@@ -51,11 +51,11 @@ The application is tested by running the index.js file in terminal
 ## Contributors
 
 
-[Darren Kandekore](https://github.com/Kandekore)
+[Darren](https://github.com/kandekore)
 
 
 
-[My Spirit Guide](https://github.com/Just to show we can add multiple contributors)
+[Someone Else](https://github.com/afriend)
 
 
 
@@ -63,7 +63,7 @@ The application is tested by running the index.js file in terminal
 
 Please contact me if you have any questions
 
-[Kandekore](https://github.com/Kandekore)
+[kandekore](https://github.com/kandekore)
 
 [darren@kandekore.net](mailto:darren@kandekore.net)
 
