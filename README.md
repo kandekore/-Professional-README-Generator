@@ -24,7 +24,7 @@ This application creates a README.md file based on inputs to command line
 
 ## Usage
 
-For a video of how to use the application please follow [this link.](tba)
+For a video of how to use the application please follow [this link.](https://drive.google.com/file/d/1zroRl8kYG4NLTiVnE6UdZd6-Sidqu4aO/view)
 
 The application is used soley in command line using inquirer and fs
 
