@@ -38,7 +38,7 @@ by typing npm install into terminal
 
 1. Run the application:
 
-run node index
+node index
 
 2. Follow the prompts to enter your project details.
 3. A `README.md` file will be generated in the root directory.
@@ -56,7 +56,6 @@ Test the application by running the `index.js` file in your terminal and ensurin
 ## Contributors
 
 - [Darren](https://github.com/kandekore)
-- [Someone Else](https://github.com/afriend)
 
 ## Questions
 
